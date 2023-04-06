@@ -1,0 +1,15 @@
+{% extends 'app/layout.html' %}
+{% block titulo %}
+Nuevo Empleado
+{% endblock %}
+
+{% block principal %}
+<h2>Nuevo Empleado</h2>
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
+    <button type="submit">Grabar</button>
+</form>
+{% endblock %}

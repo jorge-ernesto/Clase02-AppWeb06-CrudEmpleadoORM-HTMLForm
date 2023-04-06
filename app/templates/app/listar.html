@@ -1,0 +1,32 @@
+{% extends 'app/layout.html' %}
+{% block titulo %}
+lista empleados
+{% endblock %}
+
+{% block principal %}
+<h2>Lista de Empleados</h2>
+<table border="1">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Nombre</td>
+            <td>Apellidos</td>
+            <td>Edad</td>
+            <td>Fecha</td>
+            <td>Sueldo</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for emp in empleados %}
+        <tr>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.nombre }}</td>
+            <td>{{ emp.apellidos }}</td>
+            <td>{{ emp.edad }}</td>
+            <td>{{ emp.fecha }}</td>
+            <td>{{ emp.sueldo }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
